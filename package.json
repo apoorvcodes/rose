@@ -6,7 +6,7 @@
   "author": "Apoorv",
   "license": "MIT",
   "scripts": {
-    "dev": "nodemon --exec ts-node src/main.ts"
+    "dev": "nodemon --exec ts-node src/run.ts"
   },
   "dependencies": {
     "@eviatejs/plugin-filesystem-router": "^0.1.1",

@@ -26,10 +26,6 @@ export class FileSystemRouter  {
     readdirSync(middlewarePath).forEach(async (file: string) => {
       const middleware = await import(`${middlewarePath}/${file}`);
       app.use(middleware.middleware.run, middleware.middleware.position)
-    //   this.middleware.push({
-    //     position: ,
-    //     handler: middleware.middleware.run
-    //   });
     });
   }
 
@@ -44,21 +40,19 @@ export class FileSystemRouter  {
 
       if (result) file = ':' + result[1];
 
-      const rmPath = path
+      let rmPath = path
         .replace(process.cwd(), '')
-        .replace(this.options.routerDir, '');
-      let routePath: string = '';
+        .replace("/"+this.options.routerDir, ''); 
+
+      let routePath: string = "";
 
       if (file.endsWith('.ts'))
         routePath = rmPath + '/' + file.replace('.ts', '');
       if (file.endsWith('.js'))
         routePath = rmPath + '/' + file.replace('.js', '');
+
      app.register(code.route.method, routePath, code.route.run)
-    //   this.routes.push({
-    //     method: code.route.method,
-    //     path: routePath,
-    //     handler: code.route.run
-    //   });
+    
     }
   }
 

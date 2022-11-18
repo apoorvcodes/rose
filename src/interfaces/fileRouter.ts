@@ -1,7 +1,7 @@
 import type { MiddlewareHandler, handler} from 'eviate';
 
 
-export interface middleware {
+export interface middlewareInterface {
   name: string;
   position: string;
   run: MiddlewareHandler;
@@ -9,7 +9,7 @@ export interface middleware {
 
 
 
-export interface FileRoute {
+export interface FileRouteInterface {
   method: string;
   run: handler;
 }

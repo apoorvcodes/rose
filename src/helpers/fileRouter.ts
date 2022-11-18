@@ -92,7 +92,7 @@ export class FileSystemRouter  {
     });
   }
 
-  public handleRoutes(app: Engine) {
+  public mutate(app: Engine) {
   this.middlewares(app)
   this.logRoutes(app)
   }

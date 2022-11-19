@@ -39,18 +39,16 @@ export class FileSystemRouter  {
       const result = file.match(regex);
 
       if (result) file = ':' + result[1];
-
+   
       let rmPath = path
         .replace(process.cwd(), '')
         .replace("/"+this.options.routerDir, ''); 
 
       let routePath: string = "";
 
-      if (file.endsWith('.ts'))
-        routePath = rmPath + '/' + file.replace('.ts', '');
-      if (file.endsWith('.js'))
-        routePath = rmPath + '/' + file.replace('.js', '');
-
+   
+        routePath = rmPath + '/' + file.replace(".ts", "")
+  
      app.register(code.route.method, routePath, code.route.run)
     
     }

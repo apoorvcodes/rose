@@ -12,5 +12,4 @@ func main() {
  if err != nil {
    fmt.Print("ENV not loaded might be production")
  }
-
 }

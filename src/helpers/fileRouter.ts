@@ -1,12 +1,10 @@
-import { Engine } from 'eviate';
-import { readdirSync, lstatSync } from 'fs';
-import path from 'path';
+import { Engine } from "eviate";
+import { readdirSync, lstatSync } from "fs";
+import path from "path";
 
+import type { FileSystemMiddlewareInterface } from "../interfaces/fileRouter";
 
-import type { FileSystemMiddlewareInterface } from '../interfaces/fileRouter';
-
-export class FileSystemRouter  {
-
+export class FileSystemRouter {
   private options: FileSystemMiddlewareInterface;
 
   constructor(options: FileSystemMiddlewareInterface) {
@@ -25,32 +23,30 @@ export class FileSystemRouter  {
 
     readdirSync(middlewarePath).forEach(async (file: string) => {
       const middleware = await import(`${middlewarePath}/${file}`);
-      app.use(middleware.middleware.run, middleware.middleware.position)
+      app.use(middleware.middleware.run, middleware.middleware.position);
     });
   }
 
   private async logFile(file: string, path: string, app: Engine) {
-    if (file.endsWith('.js') || file.endsWith('.ts')) {
+    if (file.endsWith(".js") || file.endsWith(".ts")) {
       const code = await import(`${path}/${file}`);
 
-      if (!code.route) throw new Error('Sunrit implement');
+      if (!code.route) throw new Error("Sunrit implement");
 
       const regex = /\[(\w+)\]/;
       const result = file.match(regex);
 
-      if (result) file = ':' + result[1];
-   
+      if (result) file = ":" + result[1];
+
       let rmPath = path
-        .replace(process.cwd(), '')
-        .replace("/"+this.options.routerDir, ''); 
+        .replace(process.cwd(), "")
+        .replace("/" + this.options.routerDir, "");
 
       let routePath: string = "";
 
-   
-        routePath = rmPath + '/' + file.replace(".ts", "")
-  
-     app.register(code.route.method, routePath, code.route.run)
-    
+      routePath = rmPath + "/" + file.replace(".ts", "");
+
+      app.register(code.route.method, routePath, code.route.run);
     }
   }
 
@@ -85,7 +81,7 @@ export class FileSystemRouter  {
   }
 
   public mutate(app: Engine) {
-  this.middlewares(app)
-  this.logRoutes(app)
+    this.middlewares(app);
+    this.logRoutes(app);
   }
 }

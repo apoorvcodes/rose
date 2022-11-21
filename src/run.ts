@@ -5,7 +5,7 @@ import router from "./fileRouter";
 router.mutate(app);
 
 app.listen({
-    port: PORT,
-    hostname: HOST,
-    debug: DEBUG
-}); 
+  port: PORT,
+  hostname: HOST,
+  debug: DEBUG,
+});

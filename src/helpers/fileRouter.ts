@@ -2,7 +2,7 @@ import { Engine } from "eviate";
 import { readdirSync, lstatSync } from "fs";
 import path from "path";
 
-import type { FileSystemMiddlewareInterface } from "../interfaces/fileRouter";
+import type { FileSystemMiddlewareInterface } from "../interfaces/Listen";
 
 export class FileSystemRouter {
   private options: FileSystemMiddlewareInterface;

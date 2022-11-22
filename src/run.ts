@@ -1,11 +1,8 @@
-import app from "./app";
+import { bootstrap } from "./app";
 import { DEBUG, HOST, PORT } from "./constants";
-import router from "./fileRouter";
 
-router.mutate(app);
-
-app.listen({
-  port: PORT,
-  hostname: HOST,
+bootstrap({
+  Port: PORT,
+  Host: HOST,
   debug: DEBUG,
 });

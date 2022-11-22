@@ -1,13 +1,25 @@
-import { Context, Engine } from "eviate";
-const app: Engine = new Engine();
+import "reflect-metadata";
+import { ApolloServer } from "@apollo/server";
+import { buildSchema } from "type-graphql";
+import { startStandaloneServer } from "@apollo/server/standalone";
+import { UserResolver } from "./resolvers/user";
+import { listen } from "./interfaces/Listen";
 
-app.get("/", (ctx: Context) => {
-  console.log(ctx.headers);
-  return {
-    json: {
-      Name: "Apoorv",
-    },
-  };
-});
+export async function bootstrap({ Port, Host, debug }: listen) {
+  const schema = await buildSchema({
+    resolvers: [UserResolver],
+  });
 
-export default app;
+  const server = new ApolloServer({ schema,  });
+
+  const { url } = await startStandaloneServer(server, {
+    context: async ({ req }) => ({ token: req.headers.token }),
+    listen: { port: Port },
+  });
+
+  console.log(
+    `🚀  Server ready at ${url} running on ${
+      debug ? "debug mode" : "non debug mode"
+    } on ${Host}`
+  );
+}

@@ -8,7 +8,7 @@ import (
 
 func main() {
  err := godotenv.Load();
-
+ 
  if err != nil {
    fmt.Print("ENV not loaded might be production")
  }

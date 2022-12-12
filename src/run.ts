@@ -2,6 +2,8 @@ import app from "./app";
 import { DEBUG, HOST, PORT } from "./constants";
 import router from "./fileRouter";
 
+
+
 router.mutate(app);
 
 app.listen({
@@ -9,3 +11,4 @@ app.listen({
   hostname: HOST,
   debug: DEBUG,
 });
+ 

@@ -29,5 +29,5 @@ build-sim:
 clean:
 	@echo "Cleaning go and ts code" 
 	yarn pretty
-	go fmt simulations
+	go fmt ./simulations
 

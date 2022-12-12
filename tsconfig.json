@@ -1,50 +1,22 @@
 {
-  // Included directories.
-  "include": ["src"],
-  "exclude": ["node_modules"],
   "compilerOptions": {
-    "target": "es2017",
-    "lib": ["es5", "es6", "dom", "es2015"],
-    // Module
-    "module": "esnext",
-
-    // Output JS type
-
-    // Directories
-    "rootDir": ".",
-    "outDir": "./dist",
-
-    // stricter type-checking for stronger correctness. Recommended by TS
+    "target": "ES2022",
+    "module": "CommonJS",
+    "lib": ["dom", "es6", "es2017", "esnext.asynciterable"],
+    "sourceMap": false,
+    "outDir": "dist",
+    "rootDir": "src",
     "strict": true,
-
-    // linter checks for common issues
-    "noImplicitReturns": true,
-    "noFallthroughCasesInSwitch": true,
-
-    // noUnused* overlap with @typescript-eslint/no-unused-vars, can disable if duplicative
-    "noUnusedLocals": false,
-    "noUnusedParameters": false,
-
-    // use Node's module resolution algorithm, instead of the legacy TS one
+    "types": ["node"],
+    "esModuleInterop": true,
     "moduleResolution": "node",
     "resolveJsonModule": true,
-
-    // interop between ESM and CJS modules. Recommended by TS
-    "esModuleInterop": true,
-
-    // significant perf increase by skipping checking .d.ts files, particularly those in node_modules. Recommended by TS
-    "skipLibCheck": true,
-
-    // error out if import and file system have a casing mismatch. Recommended by TS
-    "forceConsistentCasingInFileNames": true,
-
-    // enable output emitting
-    "noEmit": false,
-
-    // enable default imports
+    "baseUrl": ".",
     "allowSyntheticDefaultImports": true,
-
-    // "bun-types" is the important part
-    "types": ["@types/node"]
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "removeComments": true
   }
 }

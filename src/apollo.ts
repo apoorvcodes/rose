@@ -8,7 +8,6 @@ import cors from 'cors';
 import bodyParser from 'body-parser';
 import { typeDefs, resolvers } from './schema';
 import { listen } from './interfaces';
-
 interface MyContext {
   token?: String;
 }

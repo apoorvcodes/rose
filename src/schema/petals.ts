@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-import { IUser } from "../interfaces/petals";
+import { Petals } from "../interfaces/petals";
 
 export const UserSchema = new mongoose.Schema({
   userID: { type: String, required: true },
@@ -14,4 +14,4 @@ export const UserSchema = new mongoose.Schema({
   ],
 });
 
-export const User: any = mongoose.model<IUser>("Data", UserSchema);
+export const User: any = mongoose.model<Petals>("Data", UserSchema);

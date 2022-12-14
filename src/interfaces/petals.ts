@@ -1,8 +1,9 @@
 import { Document } from "mongoose";
 
-export interface IUser extends Document {
+export interface Petals extends Document {
   cityname: String;
   cityid?: Number;
+  avgreadings: Number;
   petalNode: Number;
   petalName: String;
   location: {
@@ -21,4 +22,4 @@ export interface IUser extends Document {
       time: String;
     }
   ];
-}
+} 

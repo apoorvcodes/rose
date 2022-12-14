@@ -5,7 +5,7 @@ app.get("/", (ctx: Context) => {
   console.log(ctx.headers);
   return {
     interface: ctx.file("src/static/Home.html"),
-    status: 200
+    status: 200,
   };
 });
 

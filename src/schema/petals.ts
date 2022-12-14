@@ -1,16 +1,5 @@
 import mongoose from "mongoose";
-export interface IUser extends mongoose.Document {
-  userID: string;
-  tag?: string;
-  warn: [
-    {
-      reason: String;
-      by: String;
-      date: Number;
-      channelid: String;
-    }
-  ];
-}
+import { IUser } from "../interfaces/petals";
 
 export const UserSchema = new mongoose.Schema({
   userID: { type: String, required: true },
@@ -25,4 +14,4 @@ export const UserSchema = new mongoose.Schema({
   ],
 });
 
-export const User:any = mongoose.model<IUser>("Data", UserSchema);
+export const User: any = mongoose.model<IUser>("Data", UserSchema);

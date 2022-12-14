@@ -25,4 +25,4 @@ export const UserSchema = new mongoose.Schema({
   ],
 });
 
-export const User:any = mongoose.model<IUser>("Data", UserSchema);
+export const User: any = mongoose.model<IUser>("Data", UserSchema);

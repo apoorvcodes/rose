@@ -3,7 +3,7 @@ import { DEBUG, HOST, PORT, MONGOPASS } from "./constants";
 import router from "./fileRouter";
 import { ConnectMongo } from "./helpers/mongoOdm";
 router.mutate(app);
-ConnectMongo(MONGOPASS)
+ConnectMongo(MONGOPASS);
 app.listen({
   port: PORT,
   hostname: HOST,

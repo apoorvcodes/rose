@@ -8,7 +8,7 @@ export const middleware: middlewareInterface = {
     return {
       ctx: ctx,
       header: {
-        "Content-Type": "application/json",
+        "Access-Control-Allow-Origin": "*",
         AllowedOrigins: "*",
         AllowedMethods: "*",
         AllowedHeaders: "*",

@@ -8,13 +8,15 @@
   "license": "MIT",
   "scripts": {
     "dev": "nodemon --exec ts-node src/run.ts",
-    "pretty": "prettier --write \"./**/*.{ts,tsx,json,md}\""
+    "pretty": "prettier --write \"./**/*.{ts,tsx,json,md}\"",
+    "axios": "nodemon --exec ts-node src/check.ts"
   },
   "dependencies": {
     "@eviatejs/plugin-filesystem-router": "^0.1.1",
+    "axios": "^1.2.1",
     "boxen": "^7.0.0",
     "dotenv": "^16.0.3",
-    "eviate": "^0.1.6",
+    "eviate": "^0.1.5",
     "gradient-string": "^2.0.2",
     "mongoose": "^6.8.0"
   },

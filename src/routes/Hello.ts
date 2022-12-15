@@ -6,7 +6,7 @@ export const route: FileRouteInterface = {
   run: (ctx: Context): EviateResponse => {
     console.log(ctx.path);
     return {
-      text: "Hello World",
+      text: "Hi",
       status: 200,
     };
   },

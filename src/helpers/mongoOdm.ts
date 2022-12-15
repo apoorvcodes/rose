@@ -1,6 +1,7 @@
-import { connect } from "mongoose";
+import { connect, set } from "mongoose";
 
 export async function ConnectMongo(pass: string) {
+  set("strictQuery", false);
   connect(pass, {
     connectTimeoutMS: 10000,
   })

@@ -12,10 +12,13 @@
   },
   "dependencies": {
     "@eviatejs/plugin-filesystem-router": "^0.1.1",
+    "boxen": "^7.0.0",
     "eviate": "^0.1.5",
+    "gradient-string": "^2.0.2",
     "mongoose": "^6.8.0"
   },
   "devDependencies": {
+    "@types/gradient-string": "^1.1.2",
     "@types/mongoose": "^5.11.97",
     "@types/node": "^18.11.9",
     "nodemon": "^2.0.20",

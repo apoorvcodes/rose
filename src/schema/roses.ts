@@ -1,28 +1,36 @@
 import mongoose from "mongoose";
-export interface IUser extends mongoose.Document {
-  userID: string;
-  tag?: string;
-  warn: [
-    {
-      reason: String;
-      by: String;
-      date: Number;
-      channelid: String;
-    }
-  ];
-}
+import { roses } from "src/interfaces/roses";
 
-export const UserSchema = new mongoose.Schema({
-  userID: { type: String, required: true },
-  tag: String,
-  warn: [
+export const RoseSchema = new mongoose.Schema({
+  cityname: String,
+  cityid: Number,
+  avgreadings: Number,
+  lastUpdated: {
+    date: String,
+    time: String,
+  },
+  hotpots: [
     {
-      reason: String,
-      by: String,
-      date: Number,
-      channelid: String,
+      raw: String,
+      landmark: String,
+      count: Number,
     },
   ],
 });
 
-export const User: any = mongoose.model<IUser>("Data", UserSchema);
+export const User: any = mongoose.model<roses>("Roses", RoseSchema);
+
+// //return New(Options{
+//     AllowedOrigins: []string{"*"},
+//     AllowedMethods: []string{
+//         http.MethodHead,
+//         http.MethodGet,
+//         http.MethodPost,
+//         http.MethodPut,
+//         http.MethodPatch,
+//         http.MethodDelete,
+//     },
+//     AllowedHeaders:   []string{"*"},
+//     AllowCredentials: false,
+// })
+// }

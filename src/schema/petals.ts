@@ -1,17 +1,29 @@
 import mongoose from "mongoose";
 import { Petals } from "../interfaces/petals";
 
-export const UserSchema = new mongoose.Schema({
-  userID: { type: String, required: true },
-  tag: String,
-  warn: [
+export const PetalSchema = new mongoose.Schema({
+  cityname: String,
+  cityid: Number,
+  avgreadings: Number,
+  phoneNumber: Number,
+  petalNode: Number,
+  petalName: String,
+  location: {
+    raw: String,
+    landmark: String,
+  },
+  lastUpdated: {
+    date: String,
+    time: String,
+  },
+  readings: [
     {
-      reason: String,
-      by: String,
-      date: Number,
-      channelid: String,
+      raw: Number,
+      level: String,
+      date: String,
+      time: String,
     },
   ],
 });
 
-export const User: any = mongoose.model<Petals>("Data", UserSchema);
+export const User: any = mongoose.model<Petals>("Petals", PetalSchema);

@@ -4,6 +4,7 @@ export interface Petals extends Document {
   cityname: String;
   cityid?: Number;
   avgreadings: Number;
+  phoneNumber: Number;
   petalNode: Number;
   petalName: String;
   location: {
@@ -22,4 +23,4 @@ export interface Petals extends Document {
       time: String;
     }
   ];
-} 
+}

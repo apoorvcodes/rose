@@ -1062,10 +1062,10 @@ emoji-regex@^9.2.2:
   resolved "https://registry.yarnpkg.com/emoji-regex/-/emoji-regex-9.2.2.tgz#840c8803b0d8047f4ff0cf963176b32d4ef3ed72"
   integrity sha512-L18DaJsXSUk2+42pv8mLs5jJT2hqFkFE4j21wOmgbUqsZ2hL72NsUU785g9RXgo3s0ZNgVl42TiHp3ZtOv/Vyg==
 
-eviate@^0.1.5:
-  version "0.1.5"
-  resolved "https://registry.yarnpkg.com/eviate/-/eviate-0.1.5.tgz#16ba078350e2c1e86aa92058144fd7a208f75b68"
-  integrity sha512-ZwOX0ZTj15W0uh+mjUOBYKwkgp9FOrrsEicpD00FYqS08n6Xio9kp7HEPTK1X3k281UCgZ5x+5fJ6t/ljPwADA==
+eviate@^0.1.6:
+  version "0.1.6"
+  resolved "https://registry.yarnpkg.com/eviate/-/eviate-0.1.6.tgz#2077016ff32fadb918637a96d1ee83489526a3bd"
+  integrity sha512-ImNEwaMCQYY9LpJLv32mCpL13yXMsoxwBjyqyA0aVGS89MC6/cmtnzKlQYiV1qG+wBZzta87L01wQMi8X0u2oA==
   dependencies:
     "@eviatejs/plugin" "^0.1.3"
     picocolors "^1.0.0"

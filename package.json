@@ -13,7 +13,7 @@
   "dependencies": {
     "@eviatejs/plugin-filesystem-router": "^0.1.1",
     "boxen": "^7.0.0",
-    "eviate": "^0.1.5",
+    "eviate": "^0.1.6",
     "gradient-string": "^2.0.2",
     "mongoose": "^6.8.0"
   },
